@@ -1,0 +1,113 @@
+java uses I/O stream to make operation fast.
+java.io package contains all classes to process input and output operations
+
+what is stream?
+stream is a sequence of data.
+stream data is nothing but collections of bytes
+
+
+In Java, 3 streams are created for us automatically. All these streams are attached with the console.
+
+1) System.out: standard output stream
+
+2) System.in: standard input stream
+
+3) System.err: standard error stream
+
+OutputStream
+Java application uses an output stream to write data to a destination; it may be a file, an array, peripheral device or socket.
+
+
+  OutputStream class is an abstract class.
+ It is the superclass of all classes representing an output stream of bytes.
+methods of OutputStream class
+
+1.public void write(int)throws IOException	
+    --->is used to write a byte to the current output stream.
+2. public void write(byte[])throws IOException	
+  ---->is used to write an array of byte to the current output stream.
+3. public void close()throws IOException	
+---->is used to close the current output stream.
+
+
+OutputStream class is implemented by several child classes like,
+i.FileOutputStream
+ii.ByteArrayOutputStream
+iii.FilterOutputStream
+iv.PipedOutputStream
+v.ObjectOutputStream
+
+
+
+i.FileOutputStream:
+
+ A. FileOutputStream is one of the child class of OutputStream
+ B. FileOutputStream is used to write byte oriented as well as character oriented file
+
+to create a file we use two constrcutors of FileOutputStream
+
+i.FileOutputStream(File file, boolean append)
+ii.FileOutputStream(String filePath, boolean append) 
+
+to write any content to a file we use the follwoing methods of FileOutputStream
+
+i.void write(byte[] ary)	
+ --->It is used to write ary.length bytes from the byte array to the file output stream.
+ii. void write(byte[] ary, int off, int len)	
+---->It is used to write len bytes from the byte array starting at offset off to the file output stream.
+iii. void write(int b)	
+----->It is used to write the specified byte to the file output stream.
+
+
+
+
+
+
+
+
+InputStream
+Java application uses an input stream to read data from a source; it may be a file, an array, peripheral device or socket.
+
+
+InputStream class is an abstract class
+
+InputStream class proviodes the following methods to read character as well as byte oriented data from differnet I/O channel.
+
+Methods are:
+1. public abstract int read()throws IOException
+
+---->reads the next byte of data from the input stream. It returns -1 at the end of the file.
+
+2.public int available()throws IOException
+----->returns an estimate of the number of bytes that can be read from the current input stream.
+
+3.public void close()throws IOException
+----->is used to close the current input stream.
+
+Since it is a abstract class, it is implemented by several child classes
+
+i.FileInputStream
+ii.ByteArrayInputStream
+iii.FilterInputStream
+iv.PipedInputStream
+v.ObjectOutputStream
+
+
+i.FileInputStream:
+
+ A. FileInputStream is one of the child class of OutputStream
+ B. FileInputStream is used to read byte oriented as well as character oriented file
+
+to read file from different resource, we use two constrcutors of FileInputStream
+
+i.FileInputStream(File file)
+ii.FileInputStream(String filePath 
+
+to read any content to a file we use the follwoing methods of FileInputStream
+
+i)int read()	
+-->It is used to read the byte of data from the input stream.
+ii)int read(byte[] b)	
+-->It is used to read up to b.length bytes of data from the input stream.
+iii)int read(byte[] b, int off, int len)	
+-->It is used to read up to len bytes of data from the input stream.
