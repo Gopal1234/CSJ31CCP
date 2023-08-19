@@ -1,0 +1,12 @@
+Maven :
+
+1.Maven is one of the popular build tool which is introduced by Apache
+2.It is project management tool
+3.build tool help us to compile our source occde
+4.build tool help us to packaging all compiled component into jar files
+5.build tool help us to generate documentation
+6.build to help us to deploy our source code into local repository or server or central repository
+7.Maven uses two repository one is local repository and second one in central repository
+8.maven is POM (Project Object Model) based build tool which is written in java language
+9.Maven having ccapability to build projecct for C#, Ruby and other many languages
+10.It also help us to create our project structure and configure our project with all external dependencies
