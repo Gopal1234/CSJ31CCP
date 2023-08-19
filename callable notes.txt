@@ -1,0 +1,73 @@
+
+What is stored procedure:
+A stored procedure is a prepared SQL code that you can save, so the code can be reused over and over again.
+
+So if you have an SQL query that you write over and over again, save it as a stored procedure, and then just call it to execute it.
+
+You can also pass parameters to a stored procedure, so that the stored procedure can act based on the parameter value(s) that is passed.
+
+
+
+benifit of Store  procedure:
+
+Reusable: As mentioned, multiple users and applications can easily use and reuse stored procedures
+
+
+Easy to modify: You can quickly change the statements in a stored procedure as and when you want to, with the help of the ALTER TABLE command.
+
+Security: Stored procedures allow you to enhance the security of an application or a database by restricting the users from direct access to the table.
+
+Low network traffic: The server only passes the procedure name instead of the whole query, reducing network traffic.
+
+
+
+
+
+
+In JDBC how many types of statement ?
+There are three types of statement
+1.Statement<Interface>
+   |
+PreparedStatement<Child Interface>
+   |
+CallableStatement< child interface is the child of prepared statement>
+
+
+Callable statement is used to call stored procudure
+
+who is providing the implementation of statement?
+
+***
+Driver software vendor is responsable to implement all the above statements
+
+
+How to create object of callable statement
+
+1. CallableStatement cs=conObj.prepareCall(String procedure call);
+
+Example:
+CallableStatement cs=conObj.prepareCall("{call addProc(?,?,?) }");
+
+where call is the JDBC keyword
+addProc is the procudure name
+(?,?,?)--> is the parameters
+
+****
+Once we call the store procedure using jdbc, first it make a call to database server engine to check whether that stored procedure is available or not 
+if yes then it return the object of Callable statement otherwise it throws SqlException
+
+
+
+Steps to call stored procedure:
+
+1. make sure that Stored procedure should be alraedy there is database
+
+2.create callable statement object
+
+3.set values for every IN parameter by using setter methods
+
+4.register every OUT parameter with JDBCC type
+
+5.execute stored procedure
+
+6.get the result using corresponding getter  methods
